@@ -1,269 +1,842 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Privacy Policy - RPF Promotion Prep</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="RPF Exam Prep App Privacy Policy - RPF ASI/SI Rule 72 Exam Preparation">
+<title>Privacy Policy — RPF Exam Prep App</title>
+<style>
+  :root {
+    --bg:     #060D1A;
+    --bg2:    #0C1629;
+    --bg3:    #112040;
+    --gold:   #F5A623;
+    --text:   #E8EDF5;
+    --text2:  #94A3B8;
+    --border: rgba(255,255,255,0.08);
+    --green:  #22C55E;
+    --blue:   #22D3EE;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+  }
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  /* Header */
+  .header {
+    background: linear-gradient(135deg, #0D1F3C 0%, #1A3A6B 100%);
+    padding: 40px 24px;
+    text-align: center;
+    border-bottom: 2px solid var(--gold);
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(245,166,35,0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .app-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--gold), #E08C10);
+    color: #000;
+    font-size: 13px;
+    font-weight: 800;
+    padding: 5px 16px;
+    border-radius: 99px;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .header .subtitle {
+    color: var(--gold);
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+  .header .meta {
+    color: var(--text2);
+    font-size: 13px;
+  }
+  .header .meta span { color: var(--green); }
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f6f9;
-      color: #222;
-      line-height: 1.8;
-      padding: 20px;
-    }
+  /* Lang Toggle */
+  .lang-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px;
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+  }
+  .lang-btn {
+    padding: 7px 20px;
+    border-radius: 99px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text2);
+    cursor: pointer;
+    font-size: 13px;
+    transition: all .2s;
+  }
+  .lang-btn.active {
+    background: rgba(245,166,35,.15);
+    border-color: var(--gold);
+    color: var(--gold);
+    font-weight: 600;
+  }
 
-    .container {
-      max-width: 950px;
-      margin: auto;
-      background: #ffffff;
-      padding: 40px;
-      border-radius: 14px;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.08);
-    }
+  /* TOC */
+  .toc {
+    max-width: 860px;
+    margin: 24px auto;
+    padding: 0 20px;
+  }
+  .toc-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px 24px;
+  }
+  .toc-card h3 {
+    color: var(--gold);
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+  .toc-link {
+    color: var(--blue);
+    text-decoration: none;
+    font-size: 13px;
+    padding: 4px 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .toc-link:hover { color: var(--gold); }
 
-    h1 {
-      text-align: center;
-      color: #0d47a1;
-      margin-bottom: 10px;
-      font-size: 36px;
-    }
+  /* Main Content */
+  .content {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 20px 60px;
+  }
+  .section {
+    margin-bottom: 36px;
+    scroll-margin-top: 20px;
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-num {
+    width: 34px;
+    height: 34px;
+    background: linear-gradient(135deg, var(--gold), #E08C10);
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 800;
+    color: #000;
+    flex-shrink: 0;
+  }
+  .section h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+  }
+  .section p {
+    color: var(--text2);
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+  .section ul {
+    color: var(--text2);
+    font-size: 14px;
+    padding-left: 0;
+    list-style: none;
+    margin-bottom: 12px;
+  }
+  .section ul li {
+    padding: 6px 0;
+    padding-left: 20px;
+    position: relative;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .section ul li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+  }
 
-    .updated {
-      text-align: center;
-      color: #666;
-      margin-bottom: 35px;
-      font-size: 15px;
-    }
+  /* Info Cards */
+  .info-card {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin: 14px 0;
+    font-size: 14px;
+    color: var(--text2);
+  }
+  .info-card.green { border-left: 3px solid var(--green); background: rgba(34,197,94,0.05); }
+  .info-card.gold  { border-left: 3px solid var(--gold);  background: rgba(245,166,35,0.05); }
+  .info-card.blue  { border-left: 3px solid var(--blue);  background: rgba(34,211,238,0.05); }
+  .info-card.red   { border-left: 3px solid #F87171;      background: rgba(248,113,113,0.05); }
+  .info-card b { color: #fff; }
+  .info-card a { color: var(--blue); }
 
-    h2 {
-      margin-top: 35px;
-      margin-bottom: 15px;
-      color: #1565c0;
-      font-size: 24px;
-      border-left: 5px solid #1565c0;
-      padding-left: 12px;
-    }
+  /* Table */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0;
+    font-size: 13px;
+  }
+  .data-table th {
+    background: var(--bg3);
+    color: var(--gold);
+    padding: 10px 14px;
+    text-align: left;
+    border: 1px solid var(--border);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .data-table td {
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    color: var(--text2);
+    vertical-align: top;
+  }
+  .data-table tr:hover td { background: rgba(255,255,255,0.02); }
 
-    p {
-      margin-bottom: 15px;
-      font-size: 16px;
-    }
+  /* Contact */
+  .contact-card {
+    background: linear-gradient(135deg, rgba(26,58,107,0.5), rgba(13,31,60,0.8));
+    border: 1px solid rgba(245,166,35,0.3);
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+    margin: 24px 0;
+  }
+  .contact-card h3 { color: #fff; font-size: 18px; margin-bottom: 8px; }
+  .contact-card p  { color: var(--text2); font-size: 14px; margin-bottom: 16px; }
+  .contact-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--gold), #E08C10);
+    color: #000;
+    padding: 10px 24px;
+    border-radius: 99px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    margin: 4px;
+  }
+  .contact-btn:hover { opacity: 0.9; }
 
-    ul {
-      margin-left: 22px;
-      margin-bottom: 20px;
-    }
+  /* Footer */
+  .footer {
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    padding: 24px;
+    text-align: center;
+    color: var(--text2);
+    font-size: 12px;
+  }
+  .footer a { color: var(--gold); text-decoration: none; }
 
-    li {
-      margin-bottom: 10px;
-      font-size: 16px;
-    }
+  /* Highlight */
+  .highlight { color: var(--gold); font-weight: 600; }
+  .green-text { color: var(--green); }
+  .divider { height: 1px; background: var(--border); margin: 20px 0; }
 
-    a {
-      color: #1565c0;
-      text-decoration: none;
-    }
+  /* Language sections */
+  .lang-en { display: none; }
+  .lang-hi { display: block; }
 
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .footer {
-      margin-top: 50px;
-      text-align: center;
-      color: #777;
-      font-size: 14px;
-      border-top: 1px solid #ddd;
-      padding-top: 20px;
-    }
-
-    @media (max-width: 768px) {
-      .container {
-        padding: 25px;
-      }
-
-      h1 {
-        font-size: 28px;
-      }
-
-      h2 {
-        font-size: 21px;
-      }
-
-      p, li {
-        font-size: 15px;
-      }
-    }
-  </style>
+  @media (max-width: 600px) {
+    .toc-grid { grid-template-columns: 1fr; }
+    .header h1 { font-size: 22px; }
+    .data-table { font-size: 12px; }
+  }
+</style>
 </head>
-
 <body>
 
-  <div class="container">
+<!-- HEADER -->
+<div class="header">
+  <div class="app-badge">RPF</div>
+  <h1>Privacy Policy</h1>
+  <p class="subtitle">RPF ASI/SI Rule 72 — Exam Preparation App</p>
+  <p class="meta">
+    Last Updated: <span>January 15, 2025</span> &nbsp;|&nbsp;
+    Effective Date: <span>January 15, 2025</span> &nbsp;|&nbsp;
+    Version: <span>1.0</span>
+  </p>
+</div>
 
-    <h1>Privacy Policy</h1>
+<!-- LANGUAGE TOGGLE -->
+<div class="lang-toggle">
+  <button class="lang-btn active" onclick="setLang('hi')">🇮🇳 हिंदी</button>
+  <button class="lang-btn" onclick="setLang('en')">🇬🇧 English</button>
+</div>
 
-    <div class="updated">
-      Last Updated: 10 May 2026
+<!-- ════════════════════ HINDI ════════════════════ -->
+<div class="lang-hi" id="content-hi">
+
+<!-- TOC -->
+<div class="toc">
+  <div class="toc-card">
+    <h3>📋 विषय सूची</h3>
+    <div class="toc-grid">
+      <a class="toc-link" href="#s1-hi">1. हम कौन हैं</a>
+      <a class="toc-link" href="#s2-hi">2. क्या जानकारी एकत्र करते हैं</a>
+      <a class="toc-link" href="#s3-hi">3. जानकारी का उपयोग</a>
+      <a class="toc-link" href="#s4-hi">4. जानकारी share करना</a>
+      <a class="toc-link" href="#s5-hi">5. Third-party Services</a>
+      <a class="toc-link" href="#s6-hi">6. Data Security</a>
+      <a class="toc-link" href="#s7-hi">7. बच्चों की Privacy</a>
+      <a class="toc-link" href="#s8-hi">8. आपके अधिकार</a>
+      <a class="toc-link" href="#s9-hi">9. Notifications</a>
+      <a class="toc-link" href="#s10-hi">10. Policy में बदलाव</a>
+      <a class="toc-link" href="#s11-hi">11. संपर्क करें</a>
     </div>
+  </div>
+</div>
 
-    <p>
-      Welcome to <strong>RPF Exam Prep</strong>.
-      This Privacy Policy explains how we collect, use, and protect your information when you use our mobile application.
-    </p>
+<div class="content">
 
-    <h2>1. Information We Collect</h2>
-
-    <p>We may collect the following types of information:</p>
-
-    <ul>
-      <li>Name and email address during sign-in</li>
-      <li>User progress, quiz attempts, and study activity</li>
-      <li>Device information and app usage data</li>
-      <li>Crash reports and analytics data</li>
-      <li>Notification token for push notifications</li>
-    </ul>
-
-    <h2>2. How We Use Information</h2>
-
-    <p>We use collected information to:</p>
-
-    <ul>
-      <li>Provide exam preparation services</li>
-      <li>Improve app performance and user experience</li>
-      <li>Save and sync user progress</li>
-      <li>Send notifications and important updates</li>
-      <li>Fix bugs and technical issues</li>
-    </ul>
-
-    <h2>3. Firebase & Google Services</h2>
-
-    <p>
-      This app uses Google Firebase services including:
-    </p>
-
-    <ul>
-      <li>Firebase Authentication</li>
-      <li>Cloud Firestore</li>
-      <li>Firebase Analytics</li>
-      <li>Firebase Cloud Messaging</li>
-    </ul>
-
-    <p>
-      These services may collect limited technical information as per Google policies.
-    </p>
-
-    <p>
-      Google Privacy Policy:
-      <br><br>
-      <a href="https://policies.google.com/privacy" target="_blank">
-        https://policies.google.com/privacy
-      </a>
-    </p>
-
-    <h2>4. Data Security</h2>
-
-    <p>
-      We take reasonable security measures to protect user information from unauthorized access, misuse, or disclosure.
-    </p>
-
-    <h2>5. Notifications</h2>
-
-    <p>
-      The app may send notifications related to:
-    </p>
-
-    <ul>
-      <li>Study reminders</li>
-      <li>Exam updates</li>
-      <li>Important announcements</li>
-      <li>Feature updates</li>
-    </ul>
-
-    <p>
-      Users can disable notifications anytime through device settings.
-    </p>
-
-    <h2>6. Third-Party Services</h2>
-
-    <p>
-      The application may use third-party services such as:
-    </p>
-
-    <ul>
-      <li>Google Sign-In</li>
-      <li>Firebase Services</li>
-      <li>Google Play Services</li>
-    </ul>
-
-    <h2>7. Children's Privacy</h2>
-
-    <p>
-      This application is intended for educational purposes and does not knowingly collect personal information from children under 13 years of age.
-    </p>
-
-    <h2>8. Data Sharing</h2>
-
-    <p>
-      We do not sell or rent user personal information to third parties.
-    </p>
-
-    <p>
-      Information may only be shared:
-    </p>
-
-    <ul>
-      <li>To comply with legal obligations</li>
-      <li>To improve app security and functionality</li>
-      <li>When required by law</li>
-    </ul>
-
-    <h2>9. User Rights</h2>
-
-    <p>
-      Users may request:
-    </p>
-
-    <ul>
-      <li>Account deletion</li>
-      <li>Data deletion</li>
-      <li>Stopping notifications</li>
-    </ul>
-
-    <p>
-      For any request, contact us through the email below.
-    </p>
-
-    <h2>10. Changes to This Policy</h2>
-
-    <p>
-      We may update this Privacy Policy from time to time.
-      Any changes will be reflected on this page with an updated revision date.
-    </p>
-
-    <h2>11. Contact Us</h2>
-
-    <p>
-      If you have any questions regarding this Privacy Policy, you can contact us at:
-    </p>
-
-    <p>
-      <strong>Email:</strong> rpfpromotionexam@gmail.com
-    </p>
-
-    <div class="footer">
-      © 2026 RPF Exam Prep. All Rights Reserved.
-    </div>
-
+  <!-- Intro -->
+  <div class="info-card green" style="margin-bottom:24px">
+    <b>🙏 आपका स्वागत है!</b><br>
+    RPF Exam Prep App ("App", "हम", "हमारा") आपकी Privacy की परवाह करती है।
+    यह Privacy Policy बताती है कि जब आप हमारा App use करते हैं तो हम कौनसी
+    जानकारी एकत्र करते हैं, उसका उपयोग कैसे करते हैं, और आपके क्या अधिकार हैं।
+    <br><br>
+    <b>App use करने से पहले यह Policy ध्यान से पढ़ें।</b>
   </div>
 
+  <!-- Section 1 -->
+  <div class="section" id="s1-hi">
+    <div class="section-header">
+      <div class="section-num">1</div>
+      <h2>हम कौन हैं</h2>
+    </div>
+    <p><span class="highlight">RPF Exam Prep</span> एक Android application है जो RPF (Railway Protection Force) ASI और SI पद के Rule 72 विभागीय परीक्षा की तैयारी के लिए बनाई गई है।</p>
+    <div class="info-card gold">
+      <b>App का उद्देश्य:</b> MCQ Practice, Mock Test, Study Notes, Speed Test, और Discussion Forum के माध्यम से RPF परीक्षा की तैयारी में मदद करना।
+    </div>
+    <p>यह App <span class="highlight">व्यक्तिगत (Individual)</span> द्वारा बनाई और संचालित की गई है — कोई company नहीं है।</p>
+  </div>
+
+  <!-- Section 2 -->
+  <div class="section" id="s2-hi">
+    <div class="section-header">
+      <div class="section-num">2</div>
+      <h2>हम कौनसी जानकारी एकत्र करते हैं</h2>
+    </div>
+
+    <p><b style="color:#fff">2.1 — जो आप स्वयं देते हैं:</b></p>
+    <table class="data-table">
+      <tr>
+        <th>जानकारी</th>
+        <th>कब एकत्र होती है</th>
+        <th>क्यों जरूरी है</th>
+      </tr>
+      <tr>
+        <td>नाम (Name)</td>
+        <td>App first open पर / Google Login पर</td>
+        <td>Personalization, Leaderboard में दिखाने के लिए</td>
+      </tr>
+      <tr>
+        <td>Email Address</td>
+        <td>Google Sign-In से (optional)</td>
+        <td>Account identify करने के लिए</td>
+      </tr>
+      <tr>
+        <td>Profile Photo</td>
+        <td>Google account से (optional)</td>
+        <td>Profile में दिखाने के लिए</td>
+      </tr>
+      <tr>
+        <td>Forum Posts/Comments</td>
+        <td>जब आप Forum में post करते हैं</td>
+        <td>Discussion दिखाने के लिए</td>
+      </tr>
+    </table>
+
+    <p><b style="color:#fff">2.2 — Automatically एकत्र होने वाली जानकारी:</b></p>
+    <table class="data-table">
+      <tr>
+        <th>जानकारी</th>
+        <th>कहाँ store होती है</th>
+        <th>उद्देश्य</th>
+      </tr>
+      <tr>
+        <td>Quiz/Test Progress</td>
+        <td>आपके Device पर (Local)</td>
+        <td>Progress tracking, Analytics</td>
+      </tr>
+      <tr>
+        <td>Bookmarked Questions</td>
+        <td>आपके Device पर (Local)</td>
+        <td>Saved questions दिखाना</td>
+      </tr>
+      <tr>
+        <td>Daily Streak</td>
+        <td>आपके Device पर (Local)</td>
+        <td>Motivation tracking</td>
+      </tr>
+      <tr>
+        <td>Mock Test Results</td>
+        <td>Device + Firebase (Login पर)</td>
+        <td>Analytics, Leaderboard</td>
+      </tr>
+      <tr>
+        <td>Notification Preferences</td>
+        <td>आपके Device पर (Local)</td>
+        <td>Study reminders</td>
+      </tr>
+      <tr>
+        <td>App Usage Analytics</td>
+        <td>Firebase Analytics</td>
+        <td>App improvement</td>
+      </tr>
+      <tr>
+        <td>Crash Reports</td>
+        <td>Firebase Crashlytics</td>
+        <td>Bugs fix करना</td>
+      </tr>
+      <tr>
+        <td>FCM Token</td>
+        <td>Firebase</td>
+        <td>Push notifications भेजना</td>
+      </tr>
+    </table>
+
+    <div class="info-card blue">
+      <b>📱 Device पर क्या store होता है:</b><br>
+      आपके SQLite local database में: Quiz results, Bookmarks, Progress, Forum posts (draft)।
+      यह data केवल आपके phone पर है — हम इसे access नहीं कर सकते।
+    </div>
+
+    <p><b style="color:#fff">2.3 — हम क्या एकत्र नहीं करते:</b></p>
+    <ul>
+      <li>📵 Phone number</li>
+      <li>📍 Location/GPS data</li>
+      <li>📸 Camera/Photos access</li>
+      <li>💳 Payment/Financial information</li>
+      <li>👥 Contacts list</li>
+      <li>🎙️ Microphone/Audio</li>
+      <li>📁 Device files/Storage</li>
+    </ul>
+  </div>
+
+  <!-- Section 3 -->
+  <div class="section" id="s3-hi">
+    <div class="section-header">
+      <div class="section-num">3</div>
+      <h2>जानकारी का उपयोग कैसे करते हैं</h2>
+    </div>
+    <p>हम एकत्र की गई जानकारी का उपयोग निम्नलिखित उद्देश्यों के लिए करते हैं:</p>
+    <ul>
+      <li><b style="color:#fff">App Personalization:</b> आपके नाम से greet करना, progress track करना</li>
+      <li><b style="color:#fff">Learning Analytics:</b> कमज़ोर विषयों की पहचान (Weak Area Detector)</li>
+      <li><b style="color:#fff">Leaderboard:</b> All India Mock Test में ranking दिखाना</li>
+      <li><b style="color:#fff">Push Notifications:</b> Daily reminders, Live Test alerts</li>
+      <li><b style="color:#fff">Forum:</b> Discussion posts और comments दिखाना</li>
+      <li><b style="color:#fff">App Improvement:</b> Analytics से bugs fix करना, UX सुधारना</li>
+      <li><b style="color:#fff">Content Sync:</b> Firebase से latest questions/notes load करना</li>
+    </ul>
+    <div class="info-card gold">
+      <b>हम कभी नहीं करते:</b><br>
+      ✗ आपकी जानकारी बेचना<br>
+      ✗ Advertising के लिए use करना<br>
+      ✗ Profile बनाकर third parties को देना<br>
+      ✗ Marketing emails भेजना
+    </div>
+  </div>
+
+  <!-- Section 4 -->
+  <div class="section" id="s4-hi">
+    <div class="section-header">
+      <div class="section-num">4</div>
+      <h2>जानकारी किसके साथ Share होती है</h2>
+    </div>
+    <table class="data-table">
+      <tr>
+        <th>Service</th>
+        <th>क्या Share होता है</th>
+        <th>क्यों</th>
+      </tr>
+      <tr>
+        <td><b>Google Firebase</b></td>
+        <td>Quiz results, User ID, Analytics events</td>
+        <td>Database, Authentication, Notifications</td>
+      </tr>
+      <tr>
+        <td><b>Google Analytics</b></td>
+        <td>Anonymous usage data</td>
+        <td>App improvement</td>
+      </tr>
+      <tr>
+        <td><b>Google Sign-In</b></td>
+        <td>Name, Email, Photo (आपकी permission से)</td>
+        <td>Login functionality</td>
+      </tr>
+    </table>
+    <div class="info-card green">
+      <b>✅ Important:</b> हम कोई Advertisement network, Data broker, या अन्य third party के साथ आपकी personal information share <b>नहीं करते</b>।
+    </div>
+    <p>कानूनी requirement होने पर (court order आदि) हम जानकारी देने के लिए बाध्य हो सकते हैं।</p>
+  </div>
+
+  <!-- Section 5 -->
+  <div class="section" id="s5-hi">
+    <div class="section-header">
+      <div class="section-num">5</div>
+      <h2>Third-Party Services</h2>
+    </div>
+    <p>हमारा App निम्नलिखित third-party services का उपयोग करता है। इनकी अपनी Privacy Policy है:</p>
+    <ul>
+      <li>
+        <b style="color:#fff">Google Firebase</b> —
+        <a href="https://firebase.google.com/support/privacy" target="_blank">Privacy Policy</a>
+        <br><small>Database, Authentication, Analytics, Push Notifications के लिए</small>
+      </li>
+      <li>
+        <b style="color:#fff">Google Sign-In</b> —
+        <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a>
+        <br><small>Optional login के लिए</small>
+      </li>
+      <li>
+        <b style="color:#fff">Google Play Services</b> —
+        <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a>
+        <br><small>App distribution और updates के लिए</small>
+      </li>
+    </ul>
+    <div class="info-card blue">
+      <b>Note:</b> Guest mode में (बिना login के) Google Sign-In की Privacy Policy लागू नहीं होती।
+    </div>
+  </div>
+
+  <!-- Section 6 -->
+  <div class="section" id="s6-hi">
+    <div class="section-header">
+      <div class="section-num">6</div>
+      <h2>Data Security (सुरक्षा)</h2>
+    </div>
+    <p>हम आपकी जानकारी सुरक्षित रखने के लिए निम्नलिखित उपाय करते हैं:</p>
+    <ul>
+      <li><b style="color:#fff">HTTPS/TLS Encryption:</b> सभी Firebase communications encrypted हैं</li>
+      <li><b style="color:#fff">Firebase Security Rules:</b> Unauthorized access blocked है</li>
+      <li><b style="color:#fff">Local Storage:</b> Device का SQLite database — केवल आपका App access कर सकता है</li>
+      <li><b style="color:#fff">Minimal Data:</b> केवल जरूरी data एकत्र करते हैं</li>
+      <li><b style="color:#fff">No Passwords:</b> हम passwords store नहीं करते (Google OAuth use करते हैं)</li>
+    </ul>
+    <div class="info-card red">
+      <b>⚠️ Important Note:</b> Internet पर 100% security की guarantee नहीं दी जा सकती।
+      अगर आपको security breach का संदेह हो तो तुरंत हमसे संपर्क करें।
+    </div>
+    <p><b style="color:#fff">Data Retention (कितने समय तक रखते हैं):</b></p>
+    <ul>
+      <li>Account delete करने पर Firebase से data 30 दिनों में delete हो जाता है</li>
+      <li>App uninstall करने पर Local device data तुरंत delete हो जाता है</li>
+      <li>Forum posts — आपके account delete करने के बाद anonymized हो जाती हैं</li>
+    </ul>
+  </div>
+
+  <!-- Section 7 -->
+  <div class="section" id="s7-hi">
+    <div class="section-header">
+      <div class="section-num">7</div>
+      <h2>बच्चों की Privacy</h2>
+    </div>
+    <div class="info-card red">
+      <b>यह App 13 वर्ष से कम आयु के बच्चों के लिए नहीं है।</b><br>
+      RPF परीक्षा एक सरकारी भर्ती परीक्षा है जो वयस्कों के लिए है।
+      हम जानबूझकर 13 वर्ष से कम आयु के बच्चों की personal information एकत्र नहीं करते।
+    </div>
+    <p>अगर हमें पता चले कि किसी 13 वर्ष से कम बच्चे का data हमारे पास है, तो हम उसे तुरंत delete करेंगे।</p>
+  </div>
+
+  <!-- Section 8 -->
+  <div class="section" id="s8-hi">
+    <div class="section-header">
+      <div class="section-num">8</div>
+      <h2>आपके अधिकार</h2>
+    </div>
+    <p>आपके पास निम्नलिखित अधिकार हैं:</p>
+    <table class="data-table">
+      <tr>
+        <th>अधिकार</th>
+        <th>कैसे उपयोग करें</th>
+      </tr>
+      <tr>
+        <td><b>जानकारी देखना</b><br>अपना data देखें</td>
+        <td>App → Profile → Analytics में देख सकते हैं</td>
+      </tr>
+      <tr>
+        <td><b>जानकारी सुधारना</b><br>गलत data ठीक करें</td>
+        <td>App → Profile → नाम edit करें</td>
+      </tr>
+      <tr>
+        <td><b>जानकारी delete करना</b></td>
+        <td>App uninstall (local data) या हमसे email पर request करें</td>
+      </tr>
+      <tr>
+        <td><b>Account delete करना</b></td>
+        <td>हमें email करें — 30 दिनों में delete होगा</td>
+      </tr>
+      <tr>
+        <td><b>Notifications बंद करना</b></td>
+        <td>App → Settings → Notification off करें</td>
+      </tr>
+      <tr>
+        <td><b>Google Login हटाना</b></td>
+        <td>App → Profile → Logout → Guest mode</td>
+      </tr>
+    </table>
+    <div class="info-card blue">
+      <b>Data Deletion Request:</b> Email करें <a href="mailto:rpfpromotionexam@gmail.com">rpfpromotionexam@gmail.com</a> पर।
+      Subject: "Data Deletion Request" लिखें।
+    </div>
+  </div>
+
+  <!-- Section 9 -->
+  <div class="section" id="s9-hi">
+    <div class="section-header">
+      <div class="section-num">9</div>
+      <h2>Notifications</h2>
+    </div>
+    <p>हमारा App दो प्रकार की notifications भेजता है:</p>
+    <ul>
+      <li>
+        <b style="color:#fff">Local Notifications:</b> आपके phone पर — Daily study reminders।
+        आप Settings में on/off कर सकते हैं।
+      </li>
+      <li>
+        <b style="color:#fff">Push Notifications (FCM):</b> Firebase से — Live Test alerts,
+        New content updates।
+        Phone Settings → Apps → RPF Exam Prep → Notifications से disable कर सकते हैं।
+      </li>
+    </ul>
+    <div class="info-card gold">
+      <b>Permission:</b> Notifications के लिए हम Android 13+ पर explicit permission मांगते हैं।
+      आप कभी भी permission revoke कर सकते हैं।
+    </div>
+  </div>
+
+  <!-- Section 10 -->
+  <div class="section" id="s10-hi">
+    <div class="section-header">
+      <div class="section-num">10</div>
+      <h2>Policy में बदलाव</h2>
+    </div>
+    <p>हम इस Privacy Policy को update कर सकते हैं। बदलाव होने पर:</p>
+    <ul>
+      <li>App में notification मिलेगी</li>
+      <li>इस page पर "Last Updated" date बदलेगी</li>
+      <li>महत्वपूर्ण बदलावों पर email (logged-in users को)</li>
+    </ul>
+    <p>App use जारी रखने का मतलब नई Policy से सहमति है।</p>
+  </div>
+
+  <!-- Section 11 -->
+  <div class="section" id="s11-hi">
+    <div class="section-header">
+      <div class="section-num">11</div>
+      <h2>संपर्क करें</h2>
+    </div>
+    <div class="contact-card">
+      <h3>📬 कोई सवाल है?</h3>
+      <p>Privacy से संबंधित किसी भी सवाल, request या शिकायत के लिए हमसे संपर्क करें:</p>
+      <a class="contact-btn" href="mailto:rpfpromotionexam@gmail.com">✉️ rpfpromotionexam@gmail.com</a>
+      <br><br>
+      <p style="font-size:12px;color:#7a8fac">हम 7 business days के भीतर जवाब देंगे।</p>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- ════════════════════ ENGLISH ════════════════════ -->
+<div class="lang-en" id="content-en">
+<div class="toc">
+  <div class="toc-card">
+    <h3>📋 Table of Contents</h3>
+    <div class="toc-grid">
+      <a class="toc-link" href="#s1-en">1. Who We Are</a>
+      <a class="toc-link" href="#s2-en">2. Information We Collect</a>
+      <a class="toc-link" href="#s3-en">3. How We Use Information</a>
+      <a class="toc-link" href="#s4-en">4. Information Sharing</a>
+      <a class="toc-link" href="#s5-en">5. Third-Party Services</a>
+      <a class="toc-link" href="#s6-en">6. Data Security</a>
+      <a class="toc-link" href="#s7-en">7. Children's Privacy</a>
+      <a class="toc-link" href="#s8-en">8. Your Rights</a>
+      <a class="toc-link" href="#s9-en">9. Notifications</a>
+      <a class="toc-link" href="#s10-en">10. Policy Changes</a>
+      <a class="toc-link" href="#s11-en">11. Contact Us</a>
+    </div>
+  </div>
+</div>
+<div class="content">
+  <div class="info-card green" style="margin-bottom:24px">
+    <b>Welcome to RPF Exam Prep!</b><br>
+    This Privacy Policy explains how RPF Exam Prep App ("App", "we", "our") collects, uses, and protects your information when you use our Android application designed for RPF ASI/SI Rule 72 departmental exam preparation.
+  </div>
+  <div class="section" id="s1-en">
+    <div class="section-header"><div class="section-num">1</div><h2>Who We Are</h2></div>
+    <p><span class="highlight">RPF Exam Prep</span> is an Android application built for RPF (Railway Protection Force) ASI and SI officers preparing for the Rule 72 departmental promotion examination.</p>
+    <div class="info-card gold"><b>Purpose:</b> To help RPF personnel prepare through MCQ Practice, Mock Tests, Study Notes, Speed Tests, and a Discussion Forum.</div>
+    <p>This App is independently developed and operated — not by a registered company.</p>
+  </div>
+  <div class="section" id="s2-en">
+    <div class="section-header"><div class="section-num">2</div><h2>Information We Collect</h2></div>
+    <p><b style="color:#fff">2.1 Information you provide:</b></p>
+    <table class="data-table">
+      <tr><th>Data</th><th>When Collected</th><th>Purpose</th></tr>
+      <tr><td>Name</td><td>First launch / Google Login</td><td>Personalization, Leaderboard</td></tr>
+      <tr><td>Email</td><td>Google Sign-In (optional)</td><td>Account identification</td></tr>
+      <tr><td>Profile Photo</td><td>Google account (optional)</td><td>Profile display</td></tr>
+      <tr><td>Forum Posts</td><td>When you post in Forum</td><td>Community discussion</td></tr>
+    </table>
+    <p><b style="color:#fff">2.2 Automatically collected:</b></p>
+    <table class="data-table">
+      <tr><th>Data</th><th>Stored Where</th><th>Purpose</th></tr>
+      <tr><td>Quiz/Test Progress</td><td>Device (Local)</td><td>Progress tracking</td></tr>
+      <tr><td>Bookmarks</td><td>Device (Local)</td><td>Saved questions</td></tr>
+      <tr><td>Mock Test Results</td><td>Device + Firebase</td><td>Analytics, Leaderboard</td></tr>
+      <tr><td>App Usage Analytics</td><td>Firebase Analytics</td><td>App improvement</td></tr>
+      <tr><td>Crash Reports</td><td>Firebase</td><td>Bug fixing</td></tr>
+      <tr><td>FCM Token</td><td>Firebase</td><td>Push notifications</td></tr>
+    </table>
+    <p><b style="color:#fff">2.3 What we do NOT collect:</b></p>
+    <ul><li>Phone number</li><li>Location/GPS data</li><li>Camera or Photos</li><li>Payment/Financial information</li><li>Contacts list</li><li>Microphone/Audio</li><li>Device files</li></ul>
+  </div>
+  <div class="section" id="s3-en">
+    <div class="section-header"><div class="section-num">3</div><h2>How We Use Information</h2></div>
+    <ul>
+      <li><b style="color:#fff">Personalization:</b> Greet you by name, track your progress</li>
+      <li><b style="color:#fff">Analytics:</b> Identify weak areas (Weak Area Detector)</li>
+      <li><b style="color:#fff">Leaderboard:</b> Show rankings in All India Mock Tests</li>
+      <li><b style="color:#fff">Notifications:</b> Daily reminders, Live Test alerts</li>
+      <li><b style="color:#fff">App Improvement:</b> Fix bugs, improve UX</li>
+    </ul>
+    <div class="info-card gold"><b>We NEVER:</b><br>✗ Sell your data &nbsp; ✗ Use data for advertising &nbsp; ✗ Share profiles with third parties</div>
+  </div>
+  <div class="section" id="s4-en">
+    <div class="section-header"><div class="section-num">4</div><h2>Information Sharing</h2></div>
+    <table class="data-table">
+      <tr><th>Service</th><th>What is Shared</th><th>Why</th></tr>
+      <tr><td><b>Google Firebase</b></td><td>Quiz results, User ID, Analytics</td><td>Database, Auth, Notifications</td></tr>
+      <tr><td><b>Google Analytics</b></td><td>Anonymous usage data</td><td>App improvement</td></tr>
+      <tr><td><b>Google Sign-In</b></td><td>Name, Email, Photo (with permission)</td><td>Login functionality</td></tr>
+    </table>
+    <div class="info-card green"><b>✅ We do NOT share</b> your personal information with any advertising networks, data brokers, or other third parties.</div>
+  </div>
+  <div class="section" id="s5-en">
+    <div class="section-header"><div class="section-num">5</div><h2>Third-Party Services</h2></div>
+    <ul>
+      <li><b style="color:#fff">Google Firebase</b> — <a href="https://firebase.google.com/support/privacy" target="_blank">Privacy Policy</a></li>
+      <li><b style="color:#fff">Google Sign-In</b> — <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></li>
+      <li><b style="color:#fff">Google Play Services</b> — <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></li>
+    </ul>
+  </div>
+  <div class="section" id="s6-en">
+    <div class="section-header"><div class="section-num">6</div><h2>Data Security</h2></div>
+    <ul>
+      <li><b style="color:#fff">HTTPS/TLS Encryption</b> for all Firebase communications</li>
+      <li><b style="color:#fff">Firebase Security Rules</b> block unauthorized access</li>
+      <li><b style="color:#fff">No Passwords Stored</b> — Google OAuth only</li>
+      <li><b style="color:#fff">Minimal Data Collection</b> — only what's necessary</li>
+    </ul>
+    <p><b style="color:#fff">Data Retention:</b> Local data deleted on uninstall. Firebase data deleted within 30 days of account deletion request.</p>
+  </div>
+  <div class="section" id="s7-en">
+    <div class="section-header"><div class="section-num">7</div><h2>Children's Privacy</h2></div>
+    <div class="info-card red"><b>This App is NOT intended for children under 13 years of age.</b> RPF is a government recruitment examination for adults. We do not knowingly collect personal information from children under 13.</div>
+  </div>
+  <div class="section" id="s8-en">
+    <div class="section-header"><div class="section-num">8</div><h2>Your Rights</h2></div>
+    <table class="data-table">
+      <tr><th>Right</th><th>How to Exercise</th></tr>
+      <tr><td>Access your data</td><td>App → Profile → Analytics</td></tr>
+      <tr><td>Correct your data</td><td>App → Profile → Edit name</td></tr>
+      <tr><td>Delete your data</td><td>Uninstall app OR email us</td></tr>
+      <tr><td>Disable notifications</td><td>App → Settings → Notifications off</td></tr>
+    </table>
+    <div class="info-card blue"><b>Data Deletion:</b> Email <a href="mailto:rpfpromotionexam@gmail.com">rpfpromotionexam@gmail.com</a> with subject "Data Deletion Request"</div>
+  </div>
+  <div class="section" id="s9-en">
+    <div class="section-header"><div class="section-num">9</div><h2>Notifications</h2></div>
+    <ul>
+      <li><b style="color:#fff">Local Notifications:</b> Daily study reminders — can be disabled in App Settings</li>
+      <li><b style="color:#fff">Push Notifications (FCM):</b> Live Test alerts, content updates — can be disabled in Phone Settings</li>
+    </ul>
+  </div>
+  <div class="section" id="s10-en">
+    <div class="section-header"><div class="section-num">10</div><h2>Policy Changes</h2></div>
+    <p>We may update this Privacy Policy. Changes will be notified via in-app notification and by updating the "Last Updated" date. Continued use means acceptance of the updated policy.</p>
+  </div>
+  <div class="section" id="s11-en">
+    <div class="section-header"><div class="section-num">11</div><h2>Contact Us</h2></div>
+    <div class="contact-card">
+      <h3>📬 Questions?</h3>
+      <p>For privacy-related queries, requests, or concerns:</p>
+      <a class="contact-btn" href="mailto:rpfpromotionexam@gmail.com">✉️ rpfpromotionexam@gmail.com</a>
+      <br><br>
+      <p style="font-size:12px;color:#7a8fac">We will respond within 7 business days.</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <p>© 2025 RPF Exam Prep. All rights reserved.</p>
+  <p style="margin-top:6px">
+    <a href="#">Privacy Policy</a> &nbsp;|&nbsp;
+    <a href="#">Terms of Service</a> &nbsp;|&nbsp;
+    <a href="mailto:rpfpromotionexam@gmail.com">Contact</a>
+  </p>
+  <p style="margin-top:8px;opacity:0.5">RPF ASI/SI Rule 72 Exam Preparation App</p>
+</div>
+
+<script>
+function setLang(lang) {
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
+  document.getElementById('content-hi').style.display = lang === 'hi' ? 'block' : 'none';
+  document.getElementById('content-en').style.display = lang === 'en' ? 'block' : 'none';
+  document.querySelector('.lang-hi').classList.toggle('active', lang === 'hi');
+}
+</script>
 </body>
 </html>
